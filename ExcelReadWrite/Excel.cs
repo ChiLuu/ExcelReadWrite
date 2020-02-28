@@ -16,11 +16,12 @@ namespace ExcelReadWrite
         public Workbook Workbook { get; set; }
         public Worksheet Worksheet { get; set; }
 
-        public Excel(string path)
+        public Excel (){}
+
+        public void InitializeExcel(string path)
         {
             this.Path = path;
             this.Workbook = excel.Workbooks.Open(path);
-            //ws = wb.Worksheets[Sheet];
         }
 
     }

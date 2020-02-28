@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExcelReadWrite"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="800" WindowStartupLocation="CenterScreen"
+        Title="Excel Read Write" Height="800" Width="900" WindowStartupLocation="CenterScreen"
         FontSize="20">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -33,56 +33,67 @@
 
         <!-- Worksheet 1 -->
         <Label Grid.Column="1" Grid.Row="1" Content="Workbook 1:"/>
-        <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtPath" 
-                 Margin="10" MinWidth="300" MaxWidth="300" FontSize="16"/>
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtPath1" 
+                 Margin="10" MinWidth="350" MaxWidth="350" FontSize="16"/>
         <Button Grid.Column="1" Grid.Row="3" x:Name="btnOpenFile" Margin="10" 
-                Grid.ColumnSpan="2" Click="btnOpenFile_Click" MinWidth="200" 
+                Grid.ColumnSpan="2" Click="btnOpenFile_Click" MinWidth="125" 
                 HorizontalAlignment="Left">Open File</Button>
         <Label Grid.Column="1" Grid.Row="4" Content="Select Worksheet"
                FontSize="18" Margin="10,10,10,0"/>
-        <ListBox Grid.Column="1" Grid.Row="5" x:Name="lbWorkSheets1" Margin="10,0,10,10" 
-                 MinHeight="200" MaxHeight="200" MinWidth="300" MaxWidth="200" FontSize="16" SelectionChanged="lbWorkSheets1_SelectionChanged"/>
-        <StackPanel Grid.Column="1" Grid.Row="6" Margin="10,10,10,4">
+        <ListBox Grid.Column="1" Grid.Row="5" x:Name="lbWorkSheets1" Margin="10,0,10,10" MinHeight="200" 
+                 MaxHeight="200" MinWidth="350" MaxWidth="350" FontSize="16" SelectionChanged="lbWorkSheets1_SelectionChanged"/>
+        <StackPanel Grid.Column="1" Grid.Row="6" Margin="10,10,10,4" MinWidth="350" MaxWidth="350">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Column="0" Grid.Row="0" Content="Column Name Starts on Row#: " FontSize="16"/>
-                <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtWS1ColumnNameStartOnRow" 
-                         TextChanged="txtWS1ColumnNameStartOnRow_TextChanged" IsEnabled="False"/>
+                <Label Grid.Column="0" Grid.Row="0" Content="Column Name Starts on Row#: "
+                       Margin="0,10,10,10" FontSize="16"/>
+                <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtWS1ColumnNameStartOnRow" Margin="10,10,0,10" 
+                         TextChanged="txtWS1ColumnNameStartOnRow_TextChanged"/>
+                <ComboBox Grid.Column="0" Grid.Row="1" x:Name="cbWorkBook1" HorizontalAlignment="Left"
+                  MinWidth="210" Margin="0,10,10,10"/>
+                <Button Grid.Column="1" Grid.Row="1" x:Name="btnGetColumn1" Content="Get Columns" 
+                        Margin="10,10,0,10" FontSize="15" Click="btnGetColumn1_Click" IsEnabled="False"/>
             </Grid>
         </StackPanel>
-        <ComboBox Grid.Column="1" Grid.Row="7" x:Name="cbWorkBook1" 
-                  MinWidth="200" MaxWidth="200" HorizontalAlignment="Right" Margin="10,4,10,10"/>
+        
 
         <!-- Worksheet 2 -->
         <Label Grid.Column="3" Grid.Row="1" Content="Workbook 2:"/>
         <TextBox Grid.Column="3" Grid.Row="2" x:Name="txtPath2" 
-                 Margin="10" MinWidth="300" MaxWidth="300" FontSize="18"/>
+                 Margin="10" MinWidth="350" MaxWidth="350" FontSize="16"/>
         <Button Grid.Column="3" Grid.Row="3" x:Name="btnOpenFile2" Margin="10" 
                 Grid.ColumnSpan="2" MinWidth="200" 
                 HorizontalAlignment="Left" Click="btnOpenFile2_Click">Open File</Button>
         <Label Grid.Column="3" Grid.Row="4" Content="Select Worksheet"
                FontSize="18" Margin="10,10,10,0"/>
-        <ListBox Grid.Column="3" Grid.Row="5" x:Name="lbWorkSheets2" Margin="10,0,10,10" 
-                 MinHeight="200" MaxHeight="200" MinWidth="300" MaxWidth="200" FontSize="16" SelectionChanged="lbWorkSheets2_SelectionChanged"/>
-        <StackPanel Grid.Column="3" Grid.Row="6" Margin="10,10,10,4">
+        <ListBox Grid.Column="3" Grid.Row="5" x:Name="lbWorkSheets2" Margin="10,0,10,10" MinHeight="200" 
+                 MaxHeight="200" MinWidth="350" MaxWidth="350" FontSize="16" SelectionChanged="lbWorkSheets2_SelectionChanged"/>
+        <StackPanel Grid.Column="3" Grid.Row="6" Margin="10,10,10,4" MinWidth="350" MaxWidth="350">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Column="0" Grid.Row="0" Content="Column Name Starts on Row#: " FontSize="16"/>
-                <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtWS2ColumnNameStartOnRow" IsEnabled="False"/>
+                <Label Grid.Column="0" Grid.Row="0" Content="Column Name Starts on Row#: " 
+                       Margin="0,10,10,10" FontSize="16"/>
+                <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtWS2ColumnNameStartOnRow" Margin="10,10,0,10"
+                         TextChanged="txtWS2ColumnNameStartOnRow_TextChanged"/>
+                <ComboBox Grid.Column="0" Grid.Row="1" x:Name="cbWorkBook2" HorizontalAlignment="Left"
+                  MinWidth="210" Margin="0,10,10,10"/>
+                <Button Grid.Column="1" Grid.Row="1" x:Name="btnGetColumn2" Content="Get Columns" 
+                        Margin="10,10,0,10" FontSize="15" Click="btnGetColumn2_Click" IsEnabled="False"/>
             </Grid>
-        </StackPanel><ComboBox Grid.Column="3" Grid.Row="7" x:Name="cbWorkBook2" 
-                  MinWidth="200" MaxWidth="200" HorizontalAlignment="Left" Margin="10,4,10,10"/>
+        </StackPanel>
     </Grid>
 </Window>
